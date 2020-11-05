@@ -1,0 +1,1 @@
+# koishi-plugin-ppysh-query
