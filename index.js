@@ -68,7 +68,7 @@ module.exports.apply = (ctx, options) => {
                 // record格式不要艾特
                 if (reply.indexOf('CQ:record') > 0) {
                     await meta.$send(reply);
-                } else if (this.replyImg) {
+                } else if (phq.replyImg) {
                     let picUrl = new t2i(reply).text2img();
                     const base64 = picUrl.substring(picUrl.indexOf(",") + 1);
                     reply = `[CQ:image,file=base64://${base64}]`;
