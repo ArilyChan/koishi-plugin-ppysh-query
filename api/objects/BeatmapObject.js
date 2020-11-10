@@ -40,7 +40,7 @@ class BeatmapObject {
         // scoremode应为parseInt(apiObject.m)
         if (!scoremode) scoremode = this.beatmapMode;
         const scoreModeString = utils.getModeString(scoremode);
-        return "谱面 " + this.beatmapId + " " + this.artist_unicode + " - " + this.title_unicode + "[" + this.diff + "] (" + this.creator + ") ★" + this.stars.toFixed(2) + " 的" + scoreModeString + "成绩：\n";
+        return "谱面 " + this.beatmapId + " " + this.artist_unicode + " - " + this.title_unicode + "[" + this.diff + "] (" + this.creator + ") ★" + this.stars.toFixed(2) + " - " + scoreModeString + "：\n";
     }
 }
 
