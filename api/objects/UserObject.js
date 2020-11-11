@@ -31,7 +31,7 @@ class UserObject {
     tocompareString(oldUserObject, mode) {
         if (!oldUserObject) oldUserObject = this;
         let output = "";
-        output = output + this.username + " 的 " + utils.getModeString(mode) + " 详细信息：\n";
+        output = output + this.username + " - " + utils.getModeString(mode) + " ：\n";
         output = output + "id：" + this.userId + "\n";
         output = output + this.modeStats.compareTo(oldUserObject.modeStats);
         output = output + "\n";
