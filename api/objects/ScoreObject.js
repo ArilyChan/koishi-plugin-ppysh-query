@@ -62,7 +62,7 @@ class ScoreObject {
         const comboString = (this.fullCombo) ? "combo: " + this.maxcombo + " / " + this.fullCombo + "\n" : "combo: " + this.maxcombo + "\n";
         const modsString = "mod：" + utils.getScoreModsString(this.mods) + "\n";
         const rankString = "rank：" + this.rank + "\n";
-        const scoreString = "score：" + utils.format_number(this.score) + "\n";
+        const scoreString = "分数：" + utils.format_number(this.score) + "\n";
         let counts = [];
         if (mode === 0) {// std
             if (this.count300 > 0) counts.push(" " + this.count300 + "x 300 ");
