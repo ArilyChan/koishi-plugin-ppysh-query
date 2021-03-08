@@ -9,7 +9,6 @@ config = {
     host: "osu.ppy.sh", // osu网址，默认为"osu.ppy.sh"
     database: "./Opsbot-v1.db", // 数据库路径，默认为根目录下的Opsbot-v1.db
     prefixs: ["?", "？"], // 指令前缀，必须为单个字符，默认为["?", "？"]
-    replyImg: false, // 是否返回图片形式，默认为false
     // 以下只是为了兼容旧版，不再使用
     // prefix: "*", // 指令前缀，必须为单个字符，默认为*
     // prefix2: "%" // 备用指令前缀，必须为单个字符，默认为%

@@ -2,7 +2,6 @@
 
 const CommandsInfo = require("./command/CommandsInfo");
 const Command = require("./command/Command");
-const t2i = require("node-text2img");
 
 class ppyshQuery {
     /**
@@ -11,7 +10,6 @@ class ppyshQuery {
      * @param {String} params.apiKey osu apiKey，必要
      * @param {String} [params.host] osu网址，默认为"osu.ppy.sh"
      * @param {String} [params.database] 数据库路径，默认为根目录下的Opsbot-v1.db
-     * @param {Boolean} [params.replyImg] 是否回复图片形式
      * @param {Array<String>} [params.prefixs] 指令前缀，必须为单个字符，默认为[?,？]
      * @param {String} [params.prefix] 兼容旧版，指令前缀，必须为单个字符，默认为?
      * @param {String} [params.prefix2] 兼容旧版，备用指令前缀，必须为单个字符，默认为？
@@ -31,7 +29,6 @@ class ppyshQuery {
         else {
             this.prefixs = params.prefixs || ["?", "？"];
         }
-        this.replyImg = params.replyImg || false;
         this.globalConstant.commandsInfo = new CommandsInfo(this.prefixs);
     }
 
@@ -68,11 +65,6 @@ module.exports.apply = (ctx, options) => {
                 // record格式不要艾特
                 if (reply.indexOf('CQ:record') > 0) {
                     await meta.$send(reply);
-                } else if (phq.replyImg) {
-                    let picUrl = new t2i(reply).text2img();
-                    const base64 = picUrl.substring(picUrl.indexOf(",") + 1);
-                    reply = `[CQ:image,file=base64://${base64}]`;
-                    await meta.$send(`[CQ:at,qq=${userId}]` + '\n' + reply);
                 } else {
                     await meta.$send(`[CQ:at,qq=${userId}]` + '\n' + reply);
                 }
