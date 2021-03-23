@@ -1,5 +1,7 @@
 # koishi-plugin-ppysh-query
 
+本项目已集成至[arilychan](https://github.com/ArilyChan/arilychan)，此处不再更新
+
 ### 使用
 ```javascript
 config = {
